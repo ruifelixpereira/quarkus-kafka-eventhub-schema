@@ -9,6 +9,15 @@ This project shows a Quarkus Kafka Avro scenario using Azure Event Hubs as a Kaf
 - Step 3. Create a new schema group in the Schema Registry
 - Step 4. In the Event Hub namespace, assign the roles "Owner" and "Schema Registry Contributor" to you service principal.
 
+## Setup your environemnt
+
+Go to `src/main/resources/applciation.properties` and replace the following values with your specific environment settings:
+- eh.namespace=[your-event-hubs-namespace]
+- kafka.sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="[your connection string]";
+- eh.tenant.id=[tenant-id]
+- eh.client.id=[client-id]
+- eh.client.secret=[client-secret]
+
 ## Compile and package the application
 
 ```shell script
